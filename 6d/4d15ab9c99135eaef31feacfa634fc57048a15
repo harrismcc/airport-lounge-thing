@@ -1,0 +1,29 @@
+.gitignore
+  s_0a00e838bc1e61::t_4d1fe3abc4efa4 1-34
+CLAUDE.md
+  s_0a00e838bc1e61::t_b037731815c6f1 1-106
+README.md
+  s_0a00e838bc1e61::t_5dcd13e9df64bc 1-15
+bun.lock
+  s_0a00e838bc1e61::t_0a3de9b93e7972 1-28
+package.json
+  s_0a00e838bc1e61::t_24fbfdb295c131 1-12
+tsconfig.json
+  s_0a00e838bc1e61::t_2427ab2ca6296d 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6d4d15ab9c99135eaef31feacfa634fc57048a15",
+  "prompts": {},
+  "sessions": {
+    "s_0a00e838bc1e61": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0351ZGqF4HrVEwDGwkjRzI",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    }
+  }
+}
