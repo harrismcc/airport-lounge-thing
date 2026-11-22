@@ -1,0 +1,19 @@
+README.md
+  s_759cfb2242f2ae::t_f02fd3a5118142 3,5,7,10-11,14-23,25-27,30,32,35-37,39,42-43,48,60-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fbb474a1d12de3e8547621cfb00172021172a260",
+  "prompts": {},
+  "sessions": {
+    "s_759cfb2242f2ae": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0352D0CuAu26IIJDwbHMfS",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    }
+  }
+}
