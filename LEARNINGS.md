@@ -6,6 +6,10 @@ Shared scratchpad for agents working on this repo. Add what you learn about how 
 
 - OAK Escape Lounge = WaitWell site `409810`, queue `10` (`https://409810.waitwell.us/join/10`).
 - Call the API host `https://api.waitwell.us/api/409810/…`. The `409810.waitwell.us` website sits behind a Cloudflare challenge that blocks curl/fetch; the API host doesn't.
+- Other lounges use the same API, headers, and responses under their own site ID (`https://api.waitwell.us/api/<siteId>/…`). A site ID is a 4-digit company number + 2-digit location number (CAVU US `4098xx`, CAVU UK `4194xx`, CAVU AU `4232xx`, Plaza Premium Orlando `432501`). The full scan is in [this thread](https://ampcode.com/threads/T-01a1ff5e-c6be-7773-af02-492189a77196).
+- A site's queue IDs are in `client/state` → `data.Queues[].id`. They don't always match the location number (GSP `409808` is queue 26). Every lounge site has exactly one queue. `lib/lounges.ts` lists them all.
+- Shell IDs: any location number 01–99 under a real company returns success; only ones whose `client/state` has a `Location` are real sites.
+- `Location.TimeZone` is mostly right, but SJU says `America/Chicago`.
 - No public OpenAPI spec (`/swagger.json`, `/openapi.json`, `/api-docs`, `/docs` all 404). The web app is an Angular/Ionic SPA; endpoints were found by reading its JS bundles (grep for `"client/`).
 
 ## Required headers

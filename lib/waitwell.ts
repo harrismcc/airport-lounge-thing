@@ -1,8 +1,10 @@
 // Unofficial SDK for the OAK Escape Lounge waitlist on WaitWell (https://409810.waitwell.us/join/10).
 // See LEARNINGS.md for why the API is called this way.
 
-const API = "https://api.waitwell.us/api/409810/";
-const QUEUE_ID = 10;
+import { OAK, type Lounge } from "./lounges";
+
+// Everything except getQueueStatus is OAK-only for now.
+const QUEUE_ID = OAK.queueId;
 
 export const AIRLINES = ["Alaska", "Allegiant", "Delta", "Hawaiian", "Southwest", "Spirit", "Other."] as const;
 export type Airline = (typeof AIRLINES)[number];
@@ -25,8 +27,10 @@ export class WaitWellError extends Error {
 class Session {
   private cookies = new Map<string, string>();
 
+  constructor(private siteId = OAK.siteId) {}
+
   async request(path: string, init: { method?: string; body?: unknown } = {}): Promise<any> {
-    const res = await fetch(API + path, {
+    const res = await fetch(`https://api.waitwell.us/api/${this.siteId}/${path}`, {
       method: init.method ?? "GET",
       body: init.body === undefined ? undefined : JSON.stringify(init.body),
       headers: {
@@ -58,9 +62,14 @@ export interface QueueStatus {
   message: string;
 }
 
-export async function getQueueStatus(): Promise<QueueStatus> {
-  const s = await new Session().request(`client/locationstatus?Queue_id=${QUEUE_ID}`);
+export async function getQueueStatus(lounge: Lounge = OAK): Promise<QueueStatus> {
+  const s = await new Session(lounge.siteId).request(`client/locationstatus?Queue_id=${lounge.queueId}`);
   return { open: s.IsBusinessOpen, waiting: s.NumberWaiting, waitMinutes: s.CurrentWaitTime, message: s.message };
+}
+
+/** The site's raw client/state config: queues, hours, entry types, settings. */
+export async function getSiteState(lounge: Lounge = OAK): Promise<any> {
+  return (await new Session(lounge.siteId).request("client/state")).data;
 }
 
 export async function getQueueLength(): Promise<number> {
