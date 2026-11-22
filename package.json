@@ -1,5 +1,5 @@
 {
-  "name": "oak-lounge-thing",
+  "name": "airport-lounge-thing",
   "module": "index.ts",
   "type": "module",
   "private": true,

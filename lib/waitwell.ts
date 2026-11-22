@@ -1,4 +1,4 @@
-// Unofficial SDK for the OAK Escape Lounge waitlist on WaitWell (https://409810.waitwell.us/join/10).
+// Unofficial SDK for airport lounge waitlists on WaitWell, e.g. OAK's at https://409810.waitwell.us/join/10.
 // See LEARNINGS.md for why the API is called this way.
 
 import { OAK, type Lounge } from "./lounges";

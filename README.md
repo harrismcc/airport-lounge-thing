@@ -1,8 +1,8 @@
-# oak-lounge-thing
+# airport-lounge-thing
 
 Tracks the waitlists of every lounge on WaitWell (Escape Lounges in the US, UK, and Australia, plus Plaza Premium MCO) over time.
 
-- `lib/waitwell.ts`: unofficial SDK for the lounge's WaitWell queue (status, join, leave, ticket status). See `LEARNINGS.md`.
+- `lib/waitwell.ts`: unofficial WaitWell SDK: queue status and config for any lounge; join, leave, and ticket status for OAK only. See `LEARNINGS.md`.
 - `lib/lounges.ts`: the lounges to track, with their WaitWell site and queue IDs.
 - `index.ts`: a long-running service that records each lounge's queue length and wait time every minute into DuckDB.
 
@@ -16,7 +16,7 @@ Tables:
 
 ```bash
 bun install
-bun run index.ts   # writes to oak-lounge.duckdb; set DB_PATH to change
+bun run index.ts   # writes to lounges.duckdb; set DB_PATH to change
 ```
 
 ## Deploy with Docker
@@ -26,10 +26,10 @@ docker compose up -d --build   # restarts automatically unless stopped
 docker compose logs -f
 ```
 
-The database is stored in the `data` volume at `/data/oak-lounge.duckdb`. To analyze it, copy it out:
+The database is stored in the `data` volume at `/data/lounges.duckdb`. To analyze it, copy it out:
 
 ```bash
-docker compose cp recorder:/data/oak-lounge.duckdb ./oak-lounge.duckdb
+docker compose cp recorder:/data/lounges.duckdb ./lounges.duckdb
 ```
 
 ## Analyze
@@ -37,7 +37,7 @@ docker compose cp recorder:/data/oak-lounge.duckdb ./oak-lounge.duckdb
 The service only opens the database for a moment each minute, so you can query it while it runs:
 
 ```bash
-duckdb -readonly oak-lounge.duckdb
+duckdb -readonly lounges.duckdb
 ```
 
 ```sql

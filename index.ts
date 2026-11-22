@@ -3,7 +3,7 @@ import { DuckDBInstance, listValue, type DuckDBConnection, type DuckDBValue } fr
 import { LOUNGES, OAK, type Lounge } from "./lib/lounges";
 import { getQueueStatus, getSiteState } from "./lib/waitwell";
 
-const DB_PATH = process.env.DB_PATH ?? "oak-lounge.duckdb";
+const DB_PATH = process.env.DB_PATH ?? "lounges.duckdb";
 
 // DuckDB lets only one process open a file for writing, so open it per reading
 // to leave it free for queries (e.g. the duckdb CLI) between readings.

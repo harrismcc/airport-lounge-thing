@@ -11,7 +11,7 @@ COPY lib ./lib
 # The database lives on a volume so it survives container restarts and rebuilds.
 RUN mkdir /data && chown bun:bun /data
 VOLUME /data
-ENV DB_PATH=/data/oak-lounge.duckdb
+ENV DB_PATH=/data/lounges.duckdb
 
 USER bun
 CMD ["bun", "index.ts"]
