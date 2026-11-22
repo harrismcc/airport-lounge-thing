@@ -1,0 +1,39 @@
+compose.yaml
+  s_9a8b8313f00646::t_00c21260bf7881 3-4
+.github/workflows/docker.yml
+  s_fc2daa6b228483::t_af0aa89691717b 1-44
+README.md
+  s_015cb3bc79eb70::t_f171ef8ac53103 24-25,27,31-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "163bb391c54a83bbd743903db76ede400b3194b0",
+  "prompts": {},
+  "sessions": {
+    "s_015cb3bc79eb70": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0352CkjWIjHpOyh4s0Cei2",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    },
+    "s_9a8b8313f00646": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0352CkhNQyqsEENmlNW8Fo",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    },
+    "s_fc2daa6b228483": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0352CkXmnyRA8V4HTbowcf",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    }
+  }
+}
