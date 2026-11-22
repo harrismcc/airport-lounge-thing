@@ -19,6 +19,19 @@ bun install
 bun run index.ts   # writes to oak-lounge.duckdb; set DB_PATH to change
 ```
 
+## Deploy with Docker
+
+```bash
+docker compose up -d --build   # restarts automatically unless stopped
+docker compose logs -f
+```
+
+The database is stored in the `data` volume at `/data/oak-lounge.duckdb`. To analyze it, copy it out:
+
+```bash
+docker compose cp recorder:/data/oak-lounge.duckdb ./oak-lounge.duckdb
+```
+
 ## Analyze
 
 The service only opens the database for a moment each minute, so you can query it while it runs:

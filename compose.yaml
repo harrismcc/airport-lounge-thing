@@ -1,0 +1,9 @@
+services:
+  recorder:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - data:/data
+
+volumes:
+  data:

@@ -158,6 +158,9 @@ await withDb(async (db) => {
 // Log failed runs and keep going; Bun.cron exits the process on an unhandled rejection otherwise.
 const safeReadings = () => takeReadings().catch((err) => console.error(new Date().toISOString(), "readings failed:", err));
 
+// As a container's PID 1, Bun ignores SIGTERM unless it has a handler, so `docker stop` would hang until killed.
+process.on("SIGTERM", () => process.exit(0));
+
 await safeReadings();
 Bun.cron("* * * * *", safeReadings);
 console.log(`Recording ${LOUNGES.length} lounges every minute to ${DB_PATH}`);
