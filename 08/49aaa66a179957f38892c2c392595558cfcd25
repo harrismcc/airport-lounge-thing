@@ -1,0 +1,59 @@
+Dockerfile
+  s_a0a02ae375efb6::t_869a0ed207b9ad 1-17
+index.ts
+  s_6c74ab336dee2d::t_ca32885da075cf 161-163
+.dockerignore
+  s_bca75fe28f72f9::t_939a768203f4a4 1-5
+compose.yaml
+  s_78e6f98a1610d1::t_2cdc6c4e7aef9b 1-9
+README.md
+  s_37789ee4ce3ab8::t_51cf0a04620bfd 22-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0849aaa66a179957f38892c2c392595558cfcd25",
+  "prompts": {},
+  "sessions": {
+    "s_37789ee4ce3ab8": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0352CdWa7JuUjEYUqAVH4t",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    },
+    "s_6c74ab336dee2d": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0352CaZbZnndzcyeziyUiv",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    },
+    "s_78e6f98a1610d1": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0352CaX7GcmwBEJ6ykdfGx",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    },
+    "s_a0a02ae375efb6": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0352CaUCjUGQBVbs9OjiIP",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    },
+    "s_bca75fe28f72f9": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0352CaYShuwyXCgfB4mdsU",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    }
+  }
+}
