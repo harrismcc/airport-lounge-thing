@@ -1,0 +1,37 @@
+Dockerfile
+  s_9a01549865a68b::t_31a1778e174a37 14
+README.md
+  s_b1a1fe1ffe0ca8::t_fc58198e43bfd7 1,5,19,29,32,40
+bun.lock
+  s_b1a1fe1ffe0ca8::t_b82a721d493a7b 6
+index.ts
+  s_9a01549865a68b::t_0bf27f8189f488 6
+lib/waitwell.ts
+  s_9a01549865a68b::t_2a14b2629d5bdf 1
+package.json
+  s_9a01549865a68b::t_3c349c54533f94 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cb5e0e7cf89d551ef34173e7f1877e1400c16fe5",
+  "prompts": {},
+  "sessions": {
+    "s_9a01549865a68b": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0352CjxDo707JNQizSfVTh",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    },
+    "s_b1a1fe1ffe0ca8": {
+      "agent_id": {
+        "tool": "amp",
+        "id": "TU-0352CkMHReu5hSKuhdPOBg",
+        "model": "unknown"
+      },
+      "human_author": "harrismcc <git@harrismccullers.com>"
+    }
+  }
+}
