@@ -1,5 +1,7 @@
 services:
   recorder:
+    # Published by .github/workflows/docker.yml on every push to main; `--build` builds it locally instead.
+    image: ghcr.io/harrismcc/airport-lounge-thing:latest
     build: .
     restart: unless-stopped
     volumes:

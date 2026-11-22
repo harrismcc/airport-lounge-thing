@@ -21,10 +21,14 @@ bun run index.ts   # writes to lounges.duckdb; set DB_PATH to change
 
 ## Deploy with Docker
 
+Every push to `main` publishes `ghcr.io/harrismcc/airport-lounge-thing:latest` (amd64 and arm64). On the server:
+
 ```bash
-docker compose up -d --build   # restarts automatically unless stopped
+docker compose pull && docker compose up -d   # restarts automatically unless stopped
 docker compose logs -f
 ```
+
+Use `docker compose up -d --build` instead to build from your local checkout.
 
 The database is stored in the `data` volume at `/data/lounges.duckdb`. To analyze it, copy it out:
 
